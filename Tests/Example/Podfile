@@ -1,13 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'EPSignature_Example' do
-  pod 'EPSignature', :path=> '../'
+  pod 'EPSignature', :path=> '../../'
 end
 
 target 'EPSignature_Tests' do
-  pod 'EPSignature', :path=> '../'
+  pod 'EPSignature', :path=> '../../'
 
 end
