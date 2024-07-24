@@ -51,8 +51,8 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         
         self.signatureDelegate = signatureDelegate
         self.config = config
-        let bundle = Bundle(for: EPSignatureViewController.self)
-        super.init(nibName: "EPSignatureViewController", bundle: bundle)
+        //let bundle = Bundle(for: EPSignatureViewController.self)
+        super.init(nibName: "EPSignatureViewController", bundle: .module)
     }
     
     required public init?(coder aDecoder: NSCoder) {

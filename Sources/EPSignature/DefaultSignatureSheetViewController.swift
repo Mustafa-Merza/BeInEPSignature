@@ -27,8 +27,8 @@ class DefaultSignatureSheetViewController: UIViewController {
     
     public init(delegate: DefaultSignatureSheetViewControllerDelegate) {
         self.delegate = delegate
-        let bundle = Bundle(for: DefaultSignatureSheetViewController.self)
-        super.init(nibName: "DefaultSignatureSheetViewController", bundle: bundle)
+        //let bundle = Bundle(for: DefaultSignatureSheetViewController.self)
+        super.init(nibName: "DefaultSignatureSheetViewController", bundle: .module)
     }
     
     required public init?(coder aDecoder: NSCoder) {
