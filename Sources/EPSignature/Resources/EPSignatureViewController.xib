@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EPSignatureViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EPSignatureViewController">
             <connections>
                 <outlet property="defaultSignatureButton" destination="rwY-9d-pPy" id="Vjo-vz-hwn"/>
                 <outlet property="lblDefaultSignature" destination="aik-5V-tSc" id="I3Z-k5-p5s"/>
@@ -29,7 +29,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzs-I4-Df9" userLabel="Signature Background View">
                     <rect key="frame" x="16" y="36" width="343" height="538"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAr-kk-HpY" customClass="EPSignatureView" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAr-kk-HpY" customClass="EPSignatureView">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="538"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
