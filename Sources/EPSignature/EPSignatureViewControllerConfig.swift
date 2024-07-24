@@ -45,6 +45,7 @@ public struct EPSignatureViewControllerColor {
 
 public struct EPSignatureViewControllerTitle {
     
+    let backButtonTitle: String
     let saveButtonTitle: String
     let saveToDefaultSignatureSwitchTitle: String
     let defaultSignatureButtonTitle: String
@@ -52,11 +53,13 @@ public struct EPSignatureViewControllerTitle {
     let useDefaultSignatureButtonTitle: String
     let deleteDefaultSignatureButtonTitle: String
     
-    public init(saveButtonTitle: String,
+    public init(backButtonTitle: String,
+                saveButtonTitle: String,
                 saveToDefaultSignatureSwitchTitle: String,
                 defaultSignatureButtonTitle: String,
                 useDefaultSignatureButtonTitle: String,
                 deleteDefaultSignatureButtonTitle: String) {
+        self.backButtonTitle = backButtonTitle
         self.saveButtonTitle = saveButtonTitle
         self.saveToDefaultSignatureSwitchTitle = saveToDefaultSignatureSwitchTitle
         self.defaultSignatureButtonTitle = defaultSignatureButtonTitle

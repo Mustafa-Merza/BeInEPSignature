@@ -73,11 +73,7 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
             button.setImage(.back, for: .normal)
         }
         
-        button.setTitle(title, for: .normal)
-        
-        button.titleLabel?.textColor = .red
-        
-        button.sizeToFit()
+        button.setTitle(config.titles.backButtonTitle, for: .normal)
         
         button.addTarget(self,
                          action: #selector(EPSignatureViewController.onTouchCancelButton),
