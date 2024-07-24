@@ -1,15 +1,22 @@
 PODS:
-  - EPSignature (1.0.7)
+  - EPSignature (1.0.7):
+    - NBBottomSheet
+  - NBBottomSheet (1.2.0)
 
 DEPENDENCIES:
   - EPSignature (from `../../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - NBBottomSheet
 
 EXTERNAL SOURCES:
   EPSignature:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  EPSignature: 21ea3b869cf3f435bd0312ce6c09c6a2b4ed0ce7
+  EPSignature: 507acd0f1cc9fd474609a039117e789bbc9cdce4
+  NBBottomSheet: aa7a52809b2d7b193f733247b8ce391a59904372
 
 PODFILE CHECKSUM: 8c951f5983fb068317ee76dd91fdffa4b549bc94
 

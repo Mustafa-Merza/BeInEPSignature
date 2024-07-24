@@ -18,6 +18,12 @@
   "requires_arc": true,
   "source_files": "Sources/**/*.swift",
   "resources": [
-    "Sources/EPSignature/EPSignatureViewController.xib"
-  ]
+    "Sources/EPSignature/*.xib",
+    "Sources/EPSignature/Icons.xcassets"
+  ],
+  "dependencies": {
+    "NBBottomSheet": [
+
+    ]
+  }
 }
