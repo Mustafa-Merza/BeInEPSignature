@@ -9,15 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EPSignatureViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EPSignatureViewController" customModule="EPSignature" customModuleProvider="target">
             <connections>
                 <outlet property="defaultSignatureButton" destination="rwY-9d-pPy" id="Vjo-vz-hwn"/>
+                <outlet property="defaultSignatureSwitch" destination="Xb5-Ns-Sx0" id="idM-D2-Uym"/>
                 <outlet property="lblDefaultSignature" destination="aik-5V-tSc" id="I3Z-k5-p5s"/>
                 <outlet property="saveButton" destination="rqs-q8-Aj0" id="NEJ-h8-l2G"/>
                 <outlet property="saveToDefaultsView" destination="DwN-jr-J9c" id="7NA-fw-Hpr"/>
                 <outlet property="signatureBackgroundView" destination="hzs-I4-Df9" id="Ws1-Vs-dOb"/>
                 <outlet property="signatureView" destination="OAr-kk-HpY" id="4ZM-Go-wnK"/>
-                <outlet property="switchSaveSignature" destination="DOl-lH-s9r" id="H1P-qf-qQt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzs-I4-Df9" userLabel="Signature Background View">
-                    <rect key="frame" x="16" y="36" width="343" height="538"/>
+                    <rect key="frame" x="16" y="36" width="343" height="551"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAr-kk-HpY" customClass="EPSignatureView">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="538"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="551"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                     </subviews>
@@ -43,35 +43,40 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-8B-7oQ" userLabel="Divider">
-                    <rect key="frame" x="0.0" y="588" width="375" height="2"/>
+                    <rect key="frame" x="0.0" y="601" width="375" height="2"/>
                     <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="t0X-Mk-zhu"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-FR-hgB" userLabel="Bottom Section">
-                    <rect key="frame" x="-4" y="588" width="383" height="79"/>
+                    <rect key="frame" x="-4" y="601" width="383" height="66"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDt-pS-psj">
-                            <rect key="frame" x="16" y="16" width="351" height="47"/>
+                            <rect key="frame" x="16" y="16" width="351" height="34"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DwN-jr-J9c">
-                                    <rect key="frame" x="16" y="8" width="220" height="31"/>
+                                    <rect key="frame" x="16" y="8" width="205" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save to default signature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aik-5V-tSc">
-                                            <rect key="frame" x="0.0" y="0.0" width="161" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="161" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOl-lH-s9r">
-                                            <rect key="frame" x="171" y="0.0" width="51" height="31"/>
-                                        </switch>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-Ns-Sx0" customClass="CustomSwitch" customModule="EPSignature" customModuleProvider="target">
+                                            <rect key="frame" x="171" y="0.0" width="34" height="18"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="3h2-7i-2qq"/>
+                                                <constraint firstAttribute="width" constant="34" id="R5y-X5-fsh"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqs-q8-Aj0">
-                                    <rect key="frame" x="274" y="0.0" width="61" height="47"/>
+                                    <rect key="frame" x="274" y="0.0" width="61" height="34"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Save"/>
                                     <connections>
@@ -79,7 +84,7 @@
                                     </connections>
                                 </button>
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-9d-pPy">
-                                    <rect key="frame" x="16" y="0.0" width="156" height="47"/>
+                                    <rect key="frame" x="16" y="0.0" width="156" height="34"/>
                                     <color key="tintColor" systemColor="systemOrangeColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Default Signature"/>
@@ -129,6 +134,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -19,7 +19,7 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var switchSaveSignature: UISwitch!
+    @IBOutlet weak var defaultSignatureSwitch: CustomSwitch!
     @IBOutlet weak var lblDefaultSignature: UILabel!
     @IBOutlet weak var signatureBackgroundView: UIView!
     @IBOutlet weak var signatureView: EPSignatureView!
@@ -145,9 +145,17 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         
         saveButton.tintColor = config.colors.saveButtonColor
         defaultSignatureButton.tintColor = config.colors.defaultSignatureButtonColor
-        switchSaveSignature.onTintColor = config.colors.switchColor
         
-        switchSaveSignature.setOn(false, animated: true)
+        defaultSignatureSwitch.isOn = false
+        
+        defaultSignatureSwitch.padding = -2
+        defaultSignatureSwitch.onTintColor = config.colors.switchColor.withAlphaComponent(0.5)
+        defaultSignatureSwitch.offTintColor = .darkGray.withAlphaComponent(0.5)
+        defaultSignatureSwitch.cornerRadius = 0.5
+        defaultSignatureSwitch.thumbCornerRadius = 0.5
+        defaultSignatureSwitch.thumbTintColor = config.colors.switchColor
+        defaultSignatureSwitch.animationDuration = 0.5
+        defaultSignatureSwitch.thumbSize = CGSize(width: 22, height: 22)
         
         setupDefaultSignatureViews()
     }
@@ -209,7 +217,7 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     
     @IBAction func onTouchSaveButton(_ sender: Any) {
         if let signature = signatureView.getSignatureAsImage() {
-            if switchSaveSignature.isOn {
+            if defaultSignatureSwitch.isOn {
                 let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
                 let filePath = (docPath! as NSString).appendingPathComponent("sig.data")
                 signatureView.saveSignature(filePath)
