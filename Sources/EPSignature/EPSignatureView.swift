@@ -47,6 +47,9 @@ open class EPSignatureView: UIView {
 
     }
     
+    open override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     // MARK: - Touch Functions
     
