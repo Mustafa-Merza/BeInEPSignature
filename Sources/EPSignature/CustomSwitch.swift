@@ -7,6 +7,7 @@
 
 import UIKit
 
+@objc(CustomSwitch)
 @IBDesignable
 public class CustomSwitch: UIControl {
     
