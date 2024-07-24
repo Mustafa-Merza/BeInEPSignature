@@ -225,7 +225,7 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
             signatureDelegate?.epSignature!(self, didSign: signature, boundingRect: signatureView.getSignatureBoundsInCanvas())
             dismiss(animated: true, completion: nil)
         } else {
-            showAlert(config.titles.didntSignAlertTitle, andTitle: config.titles.didntSignAlertMessage)
+            showAlert(config.titles.didntSignAlertMessage, andTitle: config.titles.didntSignAlertTitle, actionTitle: config.titles.didntSignAlertActionTitle)
         }
     }
     

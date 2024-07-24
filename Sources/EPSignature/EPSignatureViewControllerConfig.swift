@@ -55,6 +55,7 @@ public struct EPSignatureViewControllerTitle {
     
     let didntSignAlertTitle: String
     let didntSignAlertMessage: String
+    let didntSignAlertActionTitle: String
     
     public init(backButtonTitle: String,
                 saveButtonTitle: String,
@@ -63,7 +64,8 @@ public struct EPSignatureViewControllerTitle {
                 useDefaultSignatureButtonTitle: String,
                 deleteDefaultSignatureButtonTitle: String,
                 didntSignAlertTitle: String,
-                didntSignAlertMessage: String) {
+                didntSignAlertMessage: String,
+                didntSignAlertActionTitle: String) {
         self.backButtonTitle = backButtonTitle
         self.saveButtonTitle = saveButtonTitle
         self.saveToDefaultSignatureSwitchTitle = saveToDefaultSignatureSwitchTitle
@@ -72,5 +74,6 @@ public struct EPSignatureViewControllerTitle {
         self.deleteDefaultSignatureButtonTitle = deleteDefaultSignatureButtonTitle
         self.didntSignAlertTitle = didntSignAlertTitle
         self.didntSignAlertMessage = didntSignAlertMessage
+        self.didntSignAlertActionTitle = didntSignAlertActionTitle
     }
 }
