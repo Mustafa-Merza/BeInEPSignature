@@ -85,12 +85,10 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     }()
     
     private lazy var clearButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: .trash,
+        let button = UIBarButtonItem(image: .trash.withRenderingMode(.alwaysOriginal),
                                      style: .done,
                                      target: self,
                                      action: #selector(EPSignatureViewController.onTouchClearButton))
-        
-        button.tintColor = .red
         
         return button
     }()
