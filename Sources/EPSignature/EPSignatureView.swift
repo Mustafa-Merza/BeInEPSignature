@@ -8,7 +8,6 @@
 
 import UIKit
 
-@objc(EPSignatureView)
 open class EPSignatureView: UIView {
 
     // MARK: - Private Vars
