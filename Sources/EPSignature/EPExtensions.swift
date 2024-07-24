@@ -34,3 +34,16 @@ extension UIColor {
         return UIColor(red: (233/255), green: (159/255), blue: (94/255), alpha: 1.0)
     }
 }
+
+//MARK: - UIImage Extensions
+
+extension UIImage {
+    
+    static let trash = UIImage(resource: .trashIc)
+    static let redo = UIImage(resource: .redoIc)
+    static let undo = UIImage(resource: .undoIc)
+    static let edit = UIImage(resource: .editIc)
+    
+    @available(iOS 13.0, *)
+    static let back = UIImage(systemName: "chevron.backward")
+}

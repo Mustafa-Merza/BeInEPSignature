@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DefaultSignatureSheetViewController" customModule="EPSignature" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="Yx8-RM-0Ow" id="eCh-da-VAh"/>
+                <outlet property="deleteDefaultSignatureButton" destination="7TL-eF-FV3" id="vMK-L2-gos"/>
+                <outlet property="useDefaultSignatureButton" destination="Ywz-Os-iwj" id="9ag-GG-EwP"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Dor-IS-4o1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yx8-RM-0Ow" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="469" height="160"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Gnh-HO-uZR">
+                    <rect key="frame" x="0.0" y="18.666666666666664" width="469" height="122.66666666666669"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywz-Os-iwj">
+                            <rect key="frame" x="0.0" y="0.0" width="469" height="60.666666666666664"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Use Default Signature"/>
+                            <connections>
+                                <action selector="onTouchUseDefaultSignatureButton:" destination="-1" eventType="touchUpInside" id="2zD-li-Ocj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TL-eF-FV3">
+                            <rect key="frame" x="0.0" y="72.666666666666657" width="469" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Xfg-C2-yEY"/>
+                            </constraints>
+                            <buttonConfiguration key="configuration" style="plain" title="Delete Default Signature"/>
+                            <connections>
+                                <action selector="onTouchDeleteDefaultSignatureButton:" destination="-1" eventType="touchUpInside" id="wQG-Gs-Ted"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7TL-eF-FV3" firstAttribute="leading" secondItem="Gnh-HO-uZR" secondAttribute="leading" id="Je3-8Z-j2g"/>
+                        <constraint firstItem="Ywz-Os-iwj" firstAttribute="leading" secondItem="Gnh-HO-uZR" secondAttribute="leading" id="XKG-3t-ArG"/>
+                        <constraint firstItem="7TL-eF-FV3" firstAttribute="height" secondItem="Ywz-Os-iwj" secondAttribute="height" multiplier="0.826087" id="Xan-wV-28L"/>
+                        <constraint firstAttribute="trailing" secondItem="Ywz-Os-iwj" secondAttribute="trailing" id="dvU-bh-WCF"/>
+                        <constraint firstAttribute="trailing" secondItem="7TL-eF-FV3" secondAttribute="trailing" id="tBv-SS-0dh"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gnh-HO-uZR" secondAttribute="trailing" id="3Kf-hQ-KWT"/>
+                <constraint firstItem="Yx8-RM-0Ow" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3kt-cB-eTO"/>
+                <constraint firstItem="Gnh-HO-uZR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KSj-eR-06B"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Yx8-RM-0Ow" secondAttribute="trailing" id="RMw-Ln-MHf"/>
+                <constraint firstItem="Gnh-HO-uZR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aTy-jB-XBf"/>
+                <constraint firstAttribute="top" secondItem="Yx8-RM-0Ow" secondAttribute="top" id="jOW-R1-5eh"/>
+                <constraint firstAttribute="bottom" secondItem="Yx8-RM-0Ow" secondAttribute="bottom" id="w61-3Z-h0k"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="35.877862595419849" y="318.3098591549296"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
