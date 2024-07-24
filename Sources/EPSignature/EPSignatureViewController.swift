@@ -162,10 +162,10 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         self.navigationItem.leftBarButtonItem = cancelButton
         
         if userHasDefaultSignatureExists {
-            navigationItem.rightBarButtonItems = [clearButton, editButton]
+            navigationItem.rightBarButtonItems = [clearButton]
         }
         else {
-            navigationItem.rightBarButtonItems = [clearButton, undoButton, redoButton]
+            navigationItem.rightBarButtonItems = [clearButton]
         }
     }
     
