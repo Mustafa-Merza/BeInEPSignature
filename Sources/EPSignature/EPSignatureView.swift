@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc(EPSignatureView)
 open class EPSignatureView: UIView {
 
     // MARK: - Private Vars
@@ -45,10 +46,6 @@ open class EPSignatureView: UIView {
         strokeColor.setStroke()
         bezierPath.stroke()
 
-    }
-    
-    open override class func awakeFromNib() {
-        super.awakeFromNib()
     }
     
     // MARK: - Touch Functions
