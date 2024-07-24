@@ -17,7 +17,7 @@
                 <outlet property="saveToDefaultsView" destination="DwN-jr-J9c" id="7NA-fw-Hpr"/>
                 <outlet property="signatureBackgroundView" destination="hzs-I4-Df9" id="Ws1-Vs-dOb"/>
                 <outlet property="signatureView" destination="OAr-kk-HpY" id="4ZM-Go-wnK"/>
-                <outlet property="switchSaveSignature" destination="J7f-zy-tMu" id="KAn-zS-2zW"/>
+                <outlet property="switchSaveSignature" destination="DOl-lH-s9r" id="H1P-qf-qQt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -64,9 +64,8 @@
                                             <color key="textColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7f-zy-tMu">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOl-lH-s9r">
                                             <rect key="frame" x="171" y="0.0" width="51" height="31"/>
-                                            <color key="onTintColor" systemColor="systemOrangeColor"/>
                                         </switch>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,7 +78,7 @@
                                         <action selector="onTouchSaveButton:" destination="-1" eventType="touchUpInside" id="S18-iB-5ls"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-9d-pPy">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwY-9d-pPy">
                                     <rect key="frame" x="16" y="0.0" width="156" height="47"/>
                                     <color key="tintColor" systemColor="systemOrangeColor"/>
                                     <state key="normal" title="Button"/>
