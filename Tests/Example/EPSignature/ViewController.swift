@@ -19,12 +19,12 @@ class ViewController: UIViewController, EPSignatureDelegate {
         
         let colors = EPSignatureViewControllerColor(backgroundColor: .white, toolbarTintColor: .black, signatureBorderColor: .black, switchColor: .orange, saveButtonColor: .blue, defaultSignatureButtonColor: .orange)
         
-        let titles = EPSignatureViewControllerTitle(saveButtonTitle: "Save", saveToDefaultSignatureSwitchTitle: "Save to default signature", defaultSignatureButtonTitle: "Default signature", useDefaultSignatureButtonTitle: "Use default signature", deleteDefaultSignatureButtonTitle: "Delete default signature")
+        let titles = EPSignatureViewControllerTitle(backButtonTitle: "Signature", saveButtonTitle: "Save", saveToDefaultSignatureSwitchTitle: "Save to default signature", defaultSignatureButtonTitle: "Default signature", useDefaultSignatureButtonTitle: "Use default signature", deleteDefaultSignatureButtonTitle: "Delete default signature")
         
         let config = EPSignatureViewControllerConfig(colors: colors, titles: titles)
         
         let signatureVC = EPSignatureViewController(signatureDelegate: self, config: config)
-        signatureVC.title = "Signature"
+        
         let nav = UINavigationController(rootViewController: signatureVC)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
