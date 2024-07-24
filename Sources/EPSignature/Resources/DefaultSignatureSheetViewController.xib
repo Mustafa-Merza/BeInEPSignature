@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DefaultSignatureSheetViewController" customModule="EPSignature" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DefaultSignatureSheetViewController" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="Yx8-RM-0Ow" id="eCh-da-VAh"/>
                 <outlet property="deleteDefaultSignatureButton" destination="7TL-eF-FV3" id="vMK-L2-gos"/>
