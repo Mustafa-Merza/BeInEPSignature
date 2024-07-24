@@ -23,7 +23,7 @@ DESC
   s.requires_arc = true
 
   s.source_files = 'Sources/**/*.swift'
-  s.resources        = ["Sources/EPSignature/*.xib", "Sources/EPSignature/Icons.xcassets"]
+  s.resources        = ["Sources/EPSignature/Resources/*.xib", "Sources/EPSignature/Resources/Icons.xcassets"]
   
   s.dependency 'NBBottomSheet'
 end
