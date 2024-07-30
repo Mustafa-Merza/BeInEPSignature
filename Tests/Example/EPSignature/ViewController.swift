@@ -17,9 +17,9 @@ class ViewController: UIViewController, EPSignatureDelegate {
 
     @IBAction func onTouchSignatureButton(sender: AnyObject) {
         
-        let colors = EPSignatureViewControllerColor(backgroundColor: .white, toolbarTintColor: .black, signatureBorderColor: .black, switchColor: .orange, saveButtonColor: .blue, defaultSignatureButtonColor: .orange)
+        let colors = EPSignatureViewControllerColor(backgroundColor: .white, toolbarTintColor: .black, buttonsTintColor: .black, signatureBorderColor: .black, switchColor: .blue, saveButtonColor: .blue, defaultSignatureButtonColor: .orange)
         
-        let titles = EPSignatureViewControllerTitle(backButtonTitle: "Signature", saveButtonTitle: "Save", saveToDefaultSignatureSwitchTitle: "Save to default signature", defaultSignatureButtonTitle: "Default signature", useDefaultSignatureButtonTitle: "Use default signature", deleteDefaultSignatureButtonTitle: "Delete default signature", didntSignAlertTitle: "You didnt sign", didntSignAlertMessage: "please sign", didntSignAlertActionTitle: "Ok")
+        let titles = EPSignatureViewControllerTitle(backButtonTitle: "Signature", deleteSignatureButtonTitle: "Delete signature", rotateLeftButtonTitle: "Rotate left", rotateRightButtonTitle: "Rotate right", saveButtonTitle: "Save", saveSignatureSwitchTitle: "Save signature", defaultSignatureButtonTitle: "Default signature", useDefaultSignatureButtonTitle: "Use default signature", deleteDefaultSignatureButtonTitle: "Delete default signature", didntSignAlertTitle: "You didnt sign", didntSignAlertMessage: "please sign", didntSignAlertActionTitle: "Ok")
         
         let config = EPSignatureViewControllerConfig(colors: colors, titles: titles)
         
