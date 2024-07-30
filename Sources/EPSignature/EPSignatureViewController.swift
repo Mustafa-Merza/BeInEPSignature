@@ -27,6 +27,14 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var defaultSignatureButton: UIButton!
     
+    @IBOutlet weak var deleteSignatureLabel: UILabel!
+    @IBOutlet weak var rotateRightLabel: UILabel!
+    @IBOutlet weak var rotateLeftLabel: UILabel!
+    
+    @IBOutlet weak var rotateRightImageView: UIImageView!
+    
+    @IBOutlet weak var rotateLeftImageView: UIImageView!
+    
     // MARK: - Public Vars
     
     open var config: EPSignatureViewControllerConfig
@@ -61,7 +69,7 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     
     // MARK: - UI Setup
     
-    private lazy var userHasDefaultSignatureExists: Bool = {
+    private lazy var userDefaultSignatureExists: Bool = {
         defaultSignatureExists()
     }()
     
@@ -84,48 +92,6 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         return UIBarButtonItem(customView: button)
     }()
     
-    private lazy var clearButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: .trash.withRenderingMode(.alwaysOriginal),
-                                     style: .done,
-                                     target: self,
-                                     action: #selector(EPSignatureViewController.onTouchClearButton))
-        
-        return button
-    }()
-    
-    private lazy var redoButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: .redo,
-                                     style: .done,
-                                     target: self,
-                                     action: #selector(EPSignatureViewController.onTouchRedoButton))
-        
-        button.tintColor = config.colors.toolbarTintColor
-        
-        return button
-    }()
-    
-    private lazy var undoButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: .undo,
-                                     style: .done,
-                                     target: self,
-                                     action: #selector(EPSignatureViewController.onTouchUndoButton))
-        
-        button.tintColor = config.colors.toolbarTintColor
-        
-        return button
-    }()
-    
-    private lazy var editButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: .edit,
-                                     style: .done,
-                                     target: self,
-                                     action: #selector(EPSignatureViewController.onTouchEditButton))
-        
-        button.tintColor = config.colors.toolbarTintColor
-        
-        return button
-    }()
-    
     private func setupUI() {
         
         setupToolbar()
@@ -139,19 +105,30 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         saveButton.setTitle(config.titles.saveButtonTitle, for: .normal)
         defaultSignatureButton.setTitle(config.titles.defaultSignatureButtonTitle, for: .normal)
         
-        lblDefaultSignature.text = config.titles.saveToDefaultSignatureSwitchTitle
+        lblDefaultSignature.text = config.titles.saveSignatureSwitchTitle
         
         saveButton.tintColor = config.colors.saveButtonColor
         defaultSignatureButton.tintColor = config.colors.defaultSignatureButtonColor
         
+        deleteSignatureLabel.text = config.titles.deleteSignatureButtonTitle
+        rotateLeftLabel.text = config.titles.rotateLeftButtonTitle
+        rotateRightLabel.text = config.titles.rotateRightButtonTitle
+        
+        deleteSignatureLabel.textColor = config.colors.buttonsTintColor
+        rotateLeftLabel.textColor = config.colors.buttonsTintColor
+        rotateRightLabel.textColor = config.colors.buttonsTintColor
+        
+        rotateLeftImageView.tintColor = config.colors.buttonsTintColor
+        rotateRightImageView.tintColor = config.colors.buttonsTintColor
+        
         defaultSignatureSwitch.isOn = false
         
-        defaultSignatureSwitch.padding = -2
-        defaultSignatureSwitch.onTintColor = config.colors.switchColor.withAlphaComponent(0.5)
+        defaultSignatureSwitch.padding = 4
+        defaultSignatureSwitch.onTintColor = config.colors.switchColor
         defaultSignatureSwitch.offTintColor = .darkGray.withAlphaComponent(0.5)
         defaultSignatureSwitch.cornerRadius = 0.5
         defaultSignatureSwitch.thumbCornerRadius = 0.5
-        defaultSignatureSwitch.thumbTintColor = config.colors.switchColor
+        defaultSignatureSwitch.thumbTintColor = .white
         defaultSignatureSwitch.animationDuration = 0.5
         defaultSignatureSwitch.thumbSize = CGSize(width: 22, height: 22)
         
@@ -159,20 +136,13 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     }
     
     private func setupDefaultSignatureViews() {
-        saveToDefaultsView.isHidden = userHasDefaultSignatureExists
-        defaultSignatureButton.isHidden = !userHasDefaultSignatureExists
+        saveToDefaultsView.isHidden = userDefaultSignatureExists
+        defaultSignatureButton.isHidden = !userDefaultSignatureExists
     }
     
     private func setupToolbar() {
         
         self.navigationItem.leftBarButtonItem = cancelButton
-        
-        if userHasDefaultSignatureExists {
-            navigationItem.rightBarButtonItems = [clearButton]
-        }
-        else {
-            navigationItem.rightBarButtonItems = [clearButton]
-        }
     }
     
     // MARK: - Button Actions
@@ -198,17 +168,16 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let filePath = (docPath! as NSString).appendingPathComponent("sig.data")
         
-        self.userHasDefaultSignatureExists = true
-        self.setupToolbar()
+        self.userDefaultSignatureExists = true
+        
         self.setupDefaultSignatureViews()
         
         self.signatureView.loadSignature(filePath)
     }
     
     func deleteDefaultSignature() {
-        self.userHasDefaultSignatureExists = false
+        self.userDefaultSignatureExists = false
         
-        self.setupToolbar()
         self.setupDefaultSignatureViews()
         self.signatureView.removeSignature()
     }
@@ -232,23 +201,15 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func onTouchUndoButton() {
+    @IBAction func rotateRightTapped(_ sender: Any) {
         
     }
     
-    @objc func onTouchRedoButton() {
+    @IBAction func rotateLeftTapped(_ sender: Any) {
         
     }
     
-    @objc func onTouchEditButton() {
-        
-    }
-    
-    @objc func onTouchActionButton(_ barButton: UIBarButtonItem) {
-        
-    }
-    
-    @objc func onTouchClearButton() {
+    @IBAction func deleteSignatureTapped(_ sender: Any) {
         signatureView.clear()
     }
     

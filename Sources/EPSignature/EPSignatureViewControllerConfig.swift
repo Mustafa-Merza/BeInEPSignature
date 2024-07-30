@@ -23,6 +23,7 @@ public struct EPSignatureViewControllerColor {
     
     let backgroundColor: UIColor
     let toolbarTintColor: UIColor
+    let buttonsTintColor: UIColor
     let signatureBorderColor: UIColor
     let switchColor: UIColor
     let saveButtonColor: UIColor
@@ -30,12 +31,14 @@ public struct EPSignatureViewControllerColor {
     
     public init(backgroundColor: UIColor,
                 toolbarTintColor: UIColor,
+                buttonsTintColor: UIColor,
                 signatureBorderColor: UIColor,
                 switchColor: UIColor,
                 saveButtonColor: UIColor,
                 defaultSignatureButtonColor: UIColor) {
         self.backgroundColor = backgroundColor
         self.toolbarTintColor = toolbarTintColor
+        self.buttonsTintColor = buttonsTintColor
         self.signatureBorderColor = signatureBorderColor
         self.switchColor = switchColor
         self.saveButtonColor = saveButtonColor
@@ -46,8 +49,13 @@ public struct EPSignatureViewControllerColor {
 public struct EPSignatureViewControllerTitle {
     
     let backButtonTitle: String
+    
+    let deleteSignatureButtonTitle: String
+    let rotateLeftButtonTitle: String
+    let rotateRightButtonTitle: String
+    
     let saveButtonTitle: String
-    let saveToDefaultSignatureSwitchTitle: String
+    let saveSignatureSwitchTitle: String
     let defaultSignatureButtonTitle: String
     
     let useDefaultSignatureButtonTitle: String
@@ -58,8 +66,11 @@ public struct EPSignatureViewControllerTitle {
     let didntSignAlertActionTitle: String
     
     public init(backButtonTitle: String,
+                deleteSignatureButtonTitle: String,
+                rotateLeftButtonTitle: String,
+                rotateRightButtonTitle: String,
                 saveButtonTitle: String,
-                saveToDefaultSignatureSwitchTitle: String,
+                saveSignatureSwitchTitle: String,
                 defaultSignatureButtonTitle: String,
                 useDefaultSignatureButtonTitle: String,
                 deleteDefaultSignatureButtonTitle: String,
@@ -67,8 +78,11 @@ public struct EPSignatureViewControllerTitle {
                 didntSignAlertMessage: String,
                 didntSignAlertActionTitle: String) {
         self.backButtonTitle = backButtonTitle
+        self.deleteSignatureButtonTitle = deleteSignatureButtonTitle
+        self.rotateLeftButtonTitle = rotateLeftButtonTitle
+        self.rotateRightButtonTitle = rotateRightButtonTitle
         self.saveButtonTitle = saveButtonTitle
-        self.saveToDefaultSignatureSwitchTitle = saveToDefaultSignatureSwitchTitle
+        self.saveSignatureSwitchTitle = saveSignatureSwitchTitle
         self.defaultSignatureButtonTitle = defaultSignatureButtonTitle
         self.useDefaultSignatureButtonTitle = useDefaultSignatureButtonTitle
         self.deleteDefaultSignatureButtonTitle = deleteDefaultSignatureButtonTitle
