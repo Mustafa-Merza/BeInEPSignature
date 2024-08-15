@@ -202,11 +202,11 @@ open class EPSignatureViewController: UIViewController, DefaultSignatureSheetVie
     }
     
     @IBAction func rotateRightTapped(_ sender: Any) {
-        
+        signatureView.rotate(degrees: 90)
     }
     
     @IBAction func rotateLeftTapped(_ sender: Any) {
-        
+        signatureView.rotate(degrees: -90)
     }
     
     @IBAction func deleteSignatureTapped(_ sender: Any) {

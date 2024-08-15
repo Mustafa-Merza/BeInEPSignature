@@ -122,6 +122,21 @@ open class EPSignatureView: UIView {
         setNeedsDisplay()
     }
     
+    /** rotates the path
+     */
+    open func rotate(degrees: CGFloat) {
+        let radians = degrees / 180.0 * .pi
+        
+        var transform: CGAffineTransform = .identity
+        
+        transform = transform.translatedBy(x: center.x, y: center.y)
+        transform = transform.rotated(by: radians)
+        transform = transform.translatedBy(x: -center.x, y: -center.y)
+        
+        bezierPath.apply(transform)
+        setNeedsDisplay()
+    }
+    
     /** Returns the drawn path as Image. Adding subview to this view will also get returned in this image.
      */
     open func getSignatureAsImage() -> UIImage? {
