@@ -158,14 +158,7 @@ open class EPSignatureView: UIView {
         }
     }
     
-    fileprivate func getPath(_ filePath: String) -> UIBezierPath? {
-        if FileManager.default.fileExists(atPath: filePath) {
-            return NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? UIBezierPath
-        }
-        return nil
-    }
-    
-    func removeSignature() {
+    open func removeSignature() {
         let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let filePath = (docPath! as NSString).appendingPathComponent("sig.data")
         do {
@@ -176,4 +169,10 @@ open class EPSignatureView: UIView {
         }
     }
     
+    fileprivate func getPath(_ filePath: String) -> UIBezierPath? {
+        if FileManager.default.fileExists(atPath: filePath) {
+            return NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? UIBezierPath
+        }
+        return nil
+    }
 }
